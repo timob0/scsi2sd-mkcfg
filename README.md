@@ -26,10 +26,10 @@ Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel t
 
 ## Needed software:
 - You need the fatcat binary installed on your computer:
--- On both, Linux and Mac, clone this repo: https://github.com/Gregwar/fatcat.git
--- On Linux: Follow the instructions on the README file to configure, build and install
--- On Mac: Overlay the downloaded source with the provided, patched fatcat.cpp from this repo (fatcat/src/fatcat.cpp), then follow the README to build and install. Alternatively, the fatcat binary for x86_64 is included in this repo in bin/osx/fatcat (add it to PATH or copy to /usr/local/bin)
--- Both: Verify that you have fatcat on your path and it's version 1.1.0 (type in fatcat in terminal, you should get the help screen)
+  - On both, Linux and Mac, clone this repo: https://github.com/Gregwar/fatcat.git
+  - On Linux: Follow the instructions on the README file to configure, build and install
+  - On Mac: Overlay the downloaded source with the provided, patched fatcat.cpp from this repo (fatcat/src/fatcat.cpp), then follow the README to build and install. Alternatively, the fatcat binary for x86_64 is included in this repo in bin/osx/fatcat (add it to PATH or copy to /usr/local/bin)
+  - Both: Verify that you have fatcat on your path and it's version 1.1.0 (type in fatcat in terminal, you should get the help screen)
 
 ## Caveats:
 - This is terminal based, no UI
