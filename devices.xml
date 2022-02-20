@@ -1,0 +1,45 @@
+<SCSITarget id="1">
+	<enabled>true</enabled>
+	<quirks>apple</quirks>
+	<deviceType>0x0</deviceType>
+	<deviceTypeModifier>0x0</deviceTypeModifier>
+	<sdSectorStart>11097856</sdSectorStart>
+	<scsiSectors>3891200</scsiSectors>
+	<bytesPerSector>512</bytesPerSector>
+	<sectorsPerTrack>63</sectorsPerTrack>
+	<headsPerCylinder>255</headsPerCylinder>
+	<vendor> SEAGATE</vendor>
+	<prodId>          ST225N</prodId>
+	<revision> 1.0</revision>
+	<serial>1234567812340001</serial>
+</SCSITarget>
+<SCSITarget id="2">
+	<enabled>true</enabled>
+	<quirks>apple</quirks>
+	<deviceType>0x0</deviceType>
+	<deviceTypeModifier>0x0</deviceTypeModifier>
+	<sdSectorStart>5209792</sdSectorStart>
+	<scsiSectors>3850240</scsiSectors>
+	<bytesPerSector>512</bytesPerSector>
+	<sectorsPerTrack>63</sectorsPerTrack>
+	<headsPerCylinder>255</headsPerCylinder>
+	<vendor> SEAGATE</vendor>
+	<prodId>          ST225N</prodId>
+	<revision> 1.0</revision>
+	<serial>1234567812340002</serial>
+</SCSITarget>
+<SCSITarget id="3">
+	<enabled>true</enabled>
+	<quirks>apple</quirks>
+	<deviceType>0x0</deviceType>
+	<deviceTypeModifier>0x0</deviceTypeModifier>
+	<sdSectorStart>1359552</sdSectorStart>
+	<scsiSectors>3850240</scsiSectors>
+	<bytesPerSector>512</bytesPerSector>
+	<sectorsPerTrack>63</sectorsPerTrack>
+	<headsPerCylinder>255</headsPerCylinder>
+	<vendor> SEAGATE</vendor>
+	<prodId>          ST225N</prodId>
+	<revision> 1.0</revision>
+	<serial>1234567812340003</serial>
+</SCSITarget>
