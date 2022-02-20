@@ -24,14 +24,16 @@ Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel t
 9) Use scsi2sd-util to transfer the config file to the SCSI2SD board (load from file, save to device)
 10) Pop the sdcard into the SCSI2SD board and use it with your target computer
 
-## Caveats:
-- This is terminal based, no UI
-- This is avaialable for Linux and Mac OSX, no Windows version included. Should be straight forward to port though.
+## Needed software:
 - You need the fatcat binary installed on your computer:
 -- On both, Linux and Mac, clone this repo: https://github.com/Gregwar/fatcat.git
 -- On Linux: Follow the instructions on the README file to configure, build and install
 -- On Mac: Overlay the downloaded source with the provided, patched fatcat.cpp from this repo (fatcat/src/fatcat.cpp), then follow the README to build and install. Alternatively, the fatcat binary for x86_64 is included in this repo in bin/osx/fatcat (add it to PATH or copy to /usr/local/bin)
 -- Both: Verify that you have fatcat on your path and it's version 1.1.0 (type in fatcat in terminal, you should get the help screen)
+
+## Caveats:
+- This is terminal based, no UI
+- This is avaialable for Linux and Mac OSX, no Windows version included. Should be possible to port to Cygwin though.
 - The images files on the SD card must be stored on contigous blocks. This usually is ensured when adding images to a frehly formatted card. Once you start deleting and replacing images, chances a high that they get fragmented (=stored in multiple pieces on different locations on the card) which makes them unusable on the target system and very likely will lead to corruption. To work around this, when you have to replace images, just rename the old one and add a different suffix (.old) and add the updated image. From time to time, backup the SD card to a computer, format it and add back the files, leaving out the to be deleted ones. This way you will make sure that files always occupy contigous space.
 - The script will assign SCSI IDs to each .img, .dsk and .iso file in the order it finds them. To deactivate an image, just replace the suffix with something else and rerun the script. You still might have to change the SCSI Id in the config file.
 - SCSI CD ROms are theoretically supported, an image with .iso suffix will be configured as a SCSI CD Rom drive type. Some additional work is required to report back a different sector size and vendor.
