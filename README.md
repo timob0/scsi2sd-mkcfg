@@ -15,7 +15,7 @@ Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel t
 
 1) Prepare your SD card, i.e. format it with FAT32 (exFAT on Mac, vfat on Linux)
 2) Copy over the disk images you wish to use, make sure they have a img or dsk suffix (iso should also work and give you a virtual SCSI CD-Rom)
-3) Clone this repo to some folder
+3) Clone this repo to some folder (git clone https://github.com/timob0/scsi2sd-mkcfg.git), make the script(s) executable (chmod 775 mkcfg_*.sh)
 4) Install fatcat (see below)
 5) Review and adjust boardconfig.xml (the one included works for a 5.1 rev SCSI2SD)
 6) Find the mountpoint of your SD card (Linux: /media/user/cardname, Mac: /Volumes/CARDNAME)
@@ -34,7 +34,7 @@ Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel t
 ## Caveats:
 - This is terminal based, no UI
 - This is avaialable for Linux and Mac OSX, no Windows version included. Should be possible to port to Cygwin though.
-- The images files on the SD card must be stored on contigous blocks. This usually is ensured when adding images to a frehly formatted card. Once you start deleting and replacing images, chances a high that they get fragmented (=stored in multiple pieces on different locations on the card) which makes them unusable on the target system and very likely will lead to corruption. To work around this, when you have to replace images, just rename the old one and add a different suffix (.old) and add the updated image. From time to time, backup the SD card to a computer, format it and add back the files, leaving out the to be deleted ones. This way you will make sure that files always occupy contigous space.
+- The image files on the SD card must be stored on contigous blocks. This usually is ensured when adding images to a frehly formatted card. Once you start deleting and replacing images, chances a high that they get fragmented (=stored in multiple pieces on different locations on the card) which makes them unusable on the target system and very likely will lead to corruption. To work around this, when you have to replace images, just rename the old one and add a different suffix (.old) and add the updated image. From time to time, backup the SD card to a computer, format it and add back the files, leaving out the to be deleted ones. This way you will make sure that files always occupy contigous space.
 - The script will assign SCSI IDs to each .img, .dsk and .iso file in the order it finds them. To deactivate an image, just replace the suffix with something else and rerun the script. You still might have to change the SCSI Id in the config file.
 - SCSI CD ROms are theoretically supported, an image with .iso suffix will be configured as a SCSI CD Rom drive type. Some additional work is required to report back a different sector size and vendor.
 - This has been tested with a Macintosh Portable, Model 5120 only, using disk images that I've created with the Basilisk Emulator on a Mac OS X computer. There is no guarantee this will work on any other configuration. 
