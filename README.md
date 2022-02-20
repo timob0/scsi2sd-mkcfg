@@ -1,30 +1,30 @@
 # scsi2sd-mkcfg
 A tool to configure SCSI2SD for FAT formatted SD cards with multiple disk images
 
-What?
+## What?
 
-This script helps you to generate a scsi2sd_config.xml file for a FAT formatted SD card that holds multiple harddisk images. It will scan the SD card for files with suffixes of .dsk, .img or .iso and add them as virtual SCSI drives to the config file. It will figure out from the partition layout and the FAT filesystem structure at which sector addresses the files are on the SD card and what their size is.
+This script helps you to generate a scsi2sd_config.xml file for a FAT formatted SD card that holds multiple harddisk images. It will scan the SD card for files with suffixes of .dsk, .img or .iso and add them as virtual SCSI drives to the config file. It will figure out from the partition layout and the FAT filesystem structure at which sector addresses the files are stored on the SD card and what their size is.
 
 Once the config file is generated, tweak it as per you needs (remove SCSI ids you don't need etc.) and use the scsi2sd-util application to upload it to the SCSI2SD hardware. Then pop in the SD card and you should see your new SCSI disks on the target computer.
 
-Why?
+## Why?
 
 Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel tools to transfer your images - such as dd etc. which means that on a regular computer, you can't see what's on the card and more importantly, you can't use it with emulators to update your images. This script aims to help with that so that you can interchange the FAT formatted card with emulators and with real, SCSI based computers.
 
-How?
+## How?
 
-1) Prepare your SD card, i.e. format it with FAT32 (exFAT on Mac)
+1) Prepare your SD card, i.e. format it with FAT32 (exFAT on Mac, vfat on Linux)
 2) Copy over the disk images you wish to use, make sure they have a img or dsk suffix (iso should also work and give you a virtual SCSI CD-Rom)
 3) Clone this repo to some folder
 4) Install fatcat (see below)
-5) Review and adjust boardconfig.xml
-6) Find the mountpoint of your SD card
-7) Run the mkcfg_linux.sh or mkcfg_osx.sh script, depending which OS you are on
+5) Review and adjust boardconfig.xml (the one included works for a 5.1 rev SCSI2SD)
+6) Find the mountpoint of your SD card (Linux: /media/user/cardname, Mac: /Volumes/CARDNAME)
+7) Run the mkcfg_linux.sh or mkcfg_osx.sh script, depending which OS you are on. use the mountpoint from step 6) as a parameter
 8) Review the generated scsi2sd_config.xml, check board configuration and SCSI ids
 9) Use scsi2sd-util to transfer the config file to the SCSI2SD board (load from file, save to device)
 10) Pop the sdcard into the SCSI2SD board and use it with your target computer
 
-Caveats:
+## Caveats:
 - This is terminal based, no UI
 - This is avaialable for Linux and Mac OSX, no Windows version included. Should be straight forward to port though.
 - You need the fatcat binary installed on your computer:
@@ -37,5 +37,5 @@ Caveats:
 - SCSI CD ROms are theoretically supported, an image with .iso suffix will be configured as a SCSI CD Rom drive type. Some additional work is required to report back a different sector size and vendor.
 - This has been tested with a Macintosh Portable, Model 5120 only, using disk images that I've created with the Basilisk Emulator on a Mac OS X computer. There is no guarantee this will work on any other configuration. 
 
-Disclaimer:
+## Disclaimer:
 Use this on your own risk, I will not be liable for damage whatsoever caused the use of the provided software.
