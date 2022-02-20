@@ -19,7 +19,7 @@ Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel t
 4) Install fatcat (see below)
 5) Review and adjust boardconfig.xml (the one included works for a 5.1 rev SCSI2SD)
 6) Find the mountpoint of your SD card (Linux: /media/user/cardname, Mac: /Volumes/CARDNAME)
-7) Run the mkcfg_linux.sh or mkcfg_osx.sh script, depending which OS you are on. use the mountpoint from step 6) as a parameter
+7) Run the mkcfg_linux.sh or mkcfg_osx.sh script, depending which OS you are on. use the mountpoint from step 6) as a parameter, e.g. `./mkcfg_osx.sh /Volumes/PORTABLE`
 8) Review the generated scsi2sd_config.xml, check board configuration and SCSI ids
 9) Use scsi2sd-util to transfer the config file to the SCSI2SD board (load from file, save to device)
 10) Pop the sdcard into the SCSI2SD board and use it with your target computer
