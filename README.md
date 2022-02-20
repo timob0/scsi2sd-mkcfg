@@ -15,7 +15,7 @@ Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel t
 
 1) Prepare your SD card, i.e. format it with FAT32 (exFAT on Mac, vfat on Linux)
 2) Copy over the disk images you wish to use, make sure they have a img or dsk suffix (iso should also work and give you a virtual SCSI CD-Rom)
-3) Clone this repo to some folder (git clone https://github.com/timob0/scsi2sd-mkcfg.git), make the script(s) executable (chmod 775 mkcfg_*.sh)
+3) Clone this repo to some folder (`git clone https://github.com/timob0/scsi2sd-mkcfg.git`), make the script(s) executable (`chmod 775 mkcfg_*.sh)
 4) Install fatcat (see below)
 5) Review and adjust boardconfig.xml (the one included works for a 5.1 rev SCSI2SD)
 6) Find the mountpoint of your SD card (Linux: /media/user/cardname, Mac: /Volumes/CARDNAME)
