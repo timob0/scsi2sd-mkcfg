@@ -39,5 +39,9 @@ Out of the box, scsi2sd works with raw SD cards, i.e. you have to use lowlevel t
 - SCSI CD ROms are theoretically supported, an image with .iso suffix will be configured as a SCSI CD Rom drive type. Some additional work is required to report back a different sector size and vendor.
 - This has been tested with a Macintosh Portable, Model 5120 only, using disk images that I've created with the Basilisk Emulator on a Mac OS X computer. There is no guarantee this will work on any other configuration. 
 
+## TODO:
+- Complete SCSI CD Rom support
+- Align with bluescsi naming convention (type and id part of the filename)
+
 ## Disclaimer:
 Use this on your own risk, I will not be liable for damage whatsoever caused the use of the provided software.
